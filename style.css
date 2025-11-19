@@ -1,0 +1,411 @@
+
+        /* --- CSS STYLES (New Design Focus) --- */
+        :root {
+            --primary-color: #34d399; /* Soothing Green - Village/Nature vibe */
+            --secondary-color: #60a5fa; /* A soft blue for accents */
+            --dark-bg: #0d1a26;      /* Deep dark background */
+            --light-text: #e2e8f0;   /* Light text for contrast */
+            --gray-text: #94a3b8;
+            --card-bg: #1a2734;      /* Slightly lighter dark for cards */
+            --border-color: #2d3a4b; /* Subtle border color */
+            --accent-glow: 0 0 25px rgba(52, 211, 153, 0.5); /* Green glow */
+            --transition-speed: 0.6s; 
+            --icon-color: #fcd34d;   /* Moon/Sun icon color */
+            
+            /* Typography */
+            --heading-font: 'Playfair Display', serif;
+            --body-font: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--body-font);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.7;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+            background-color: rgba(13, 26, 38, 0.95); /* Deeper dark, more opaque */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000; /* Higher z-index */
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo { 
+            font-family: var(--heading-font);
+            font-size: 1.8rem; 
+            font-weight: 700; 
+            color: var(--primary-color); 
+            letter-spacing: 0.5px;
+        }
+        .nav-links { display: flex; gap: 35px; }
+        .nav-links a { 
+            transition: color 0.3s ease, transform 0.2s ease; 
+            font-weight: 400;
+            position: relative;
+        }
+        .nav-links a::after { /* Underline effect */
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover { 
+            color: var(--primary-color); 
+            transform: translateY(-2px);
+        }
+        
+        /* Sections Generic */
+        section { 
+            padding: 100px 6%; /* More padding for spacious feel */
+            min-height: 70vh;
+        }
+        .section-title { 
+            font-family: var(--heading-font);
+            text-align: center; 
+            font-size: 3.2rem; 
+            margin-bottom: 80px; /* More space */
+            color: var(--primary-color); 
+            position: relative;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        .section-title::after { /* Underline for titles */
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        /* --- Hero Section (Village View) --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('village_bg.jpg'); /* Darker overlay */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+            position: relative;
+            color: white; 
+        }
+        .hero-content {
+            z-index: 2;
+            max-width: 900px;
+        }
+        .hero h1 { 
+            font-family: var(--heading-font);
+            font-size: 5.5rem; /* Larger title */
+            margin-bottom: 25px; 
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            line-height: 1.1;
+        }
+        .hero p { 
+            font-family: var(--body-font);
+            font-size: 1.8rem; 
+            margin-bottom: 50px; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero .btn {
+            background-color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 8px; /* Slightly rounded */
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(52, 211, 153, 0.4);
+            transition: all 0.4s ease;
+        }
+        .hero .btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            background-color: var(--secondary-color); /* Hover color change */
+            box-shadow: 0 8px 20px rgba(96, 165, 250, 0.5);
+        }
+        
+        /* Cards and Grids */
+        .grid-layout { /* General grid for sections */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px; /* Increased gap */
+            align-items: stretch;
+        }
+        .info-card {
+            background-color: var(--card-bg);
+            padding: 35px; /* More padding */
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            text-align: left; /* Text alignment left for readability */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--accent-glow);
+        }
+        .info-card h3 {
+            font-family: var(--heading-font);
+            color: var(--secondary-color); /* Changed heading color */
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        .info-card p {
+            color: var(--gray-text);
+            font-size: 1rem;
+        }
+        
+        /* Gallery Section */
+        #gallery {
+            background-color: var(--dark-bg); /* Match body bg */
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger items */
+            gap: 20px; /* Increased gap */
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px; /* Consistent height */
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1); /* Zoom effect */
+        }
+        .gallery-overlay { /* Overlay on hover */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
+            color: white;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-overlay p {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Contact Form (Styled for new look) */
+        #contact {
+            background-color: var(--card-bg); /* Changed bg for contrast */
+            border-top: 1px solid var(--border-color);
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px; /* Increased gap */
+            max-width: 600px; /* Wider form */
+            margin: 40px auto 0;
+            padding: 35px;
+            background-color: var(--dark-bg); /* Darker form bg */
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        .contact-form p {
+            color: var(--gray-text);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 16px; /* More padding */
+            border: 1px solid var(--border-color); 
+            border-radius: 8px; /* Softer edges */
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            font-size: 1.05rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-color); 
+            box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.3); /* Focus glow */
+            outline: none;
+        }
+        .contact-form textarea { resize: vertical; min-height: 120px; }
+        .contact-form .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 16px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(52, 211, 153, 0.4);
+        }
+        .contact-form .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(96, 165, 250, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #08111a; /* Even darker footer */
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* --- Dark/Light Theme Overrides --- */
+        .theme-toggle {
+            background: var(--card-bg);
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.3rem; /* Slightly larger icon */
+            position: relative;
+            color: var(--icon-color);
+            transition: background var(--transition-speed);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        body.light-theme {
+            --dark-bg: #f8fcfd;      /* Very light background */
+            --light-text: #1a2734;   /* Dark text */
+            --gray-text: #5a6a7c;    /* Darker gray text */
+            --card-bg: #ffffff;      /* White cards */
+            --border-color: #e0e6ed; /* Light border */
+            --accent-glow: 0 0 15px rgba(52, 211, 153, 0.2); 
+            --icon-color: #334155; 
+        }
+        body.light-theme nav { 
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom-color: var(--border-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        body.light-theme .logo, 
+        body.light-theme .nav-links a {
+            color: var(--light-text); 
+        }
+        body.light-theme .theme-toggle {
+            background: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        body.light-theme .section-title::after {
+            background-color: var(--primary-color); /* Light theme primary color */
+        }
+        body.light-theme #contact {
+            background-color: #f1f5f9; /* Light contact bg */
+        }
+        body.light-theme .contact-form {
+            background-color: var(--card-bg);
+            border-color: var(--border-color);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        body.light-theme .contact-form input,
+        body.light-theme .contact-form textarea {
+            background-color: #f8fcfd;
+            border-color: var(--border-color);
+            color: var(--light-text);
+        }
+
+
+        /* --- Animations (Fade-in) --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px); /* Slightly more movement */
+            transition: opacity 1s ease-out, transform 1s ease-out; /* Slower and smoother */
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 4rem; }
+            .hero p { font-size: 1.5rem; }
+            .section-title { font-size: 2.5rem; margin-bottom: 60px; }
+            section { padding: 80px 5%; }
+            nav { padding: 15px 5%; }
+            .nav-links { gap: 25px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Hide for mobile for now, can add hamburger menu later */
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1.2rem; }
+            .hero .btn { padding: 12px 30px; font-size: 1rem; }
+            .section-title { font-size: 2rem; margin-bottom: 50px; }
+            .grid-layout { grid-template-columns: 1fr; } /* Single column on mobile */
+            .info-card { padding: 25px; text-align: center; } /* Center text for mobile cards */
+            .info-card h3 { font-size: 1.5rem; }
+            .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+            .gallery-item img { height: 180px; }
+            .contact-form { padding: 25px; margin-top: 30px; }
+            .contact-form input, .contact-form textarea, .contact-form .btn { font-size: 0.95rem; padding: 14px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2rem; margin-bottom: 15px; }
+            .hero p { font-size: 1rem; margin-bottom: 30px; }
+            .section-title { font-size: 1.8rem; margin-bottom: 40px; }
+        }

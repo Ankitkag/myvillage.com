@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mera Gaon</title>
+    
+    <link href="style.css" rel="stylesheet">
+    
+    
+</head>
+<body>
+
+    <nav>
+        
+        <div class="logo">Nigarni-live with happiness</div>
+        
+        <button id="theme-toggle" class="theme-toggle">
+            <span class="icon">🌙</span>
+        </button>
+        
+        <ul class="nav-links">
+            <li><a href="#about">Parichay</a></li>
+            <li><a href="#institutions">Sansthan</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Sampark</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero fade-in">
+        <div class="hero-content">
+            <h1>Ramnagar: Hamari Virasat, Hamara Gaurav</h1>
+            <p>Sanskriti, Shiksha aur Samriddhi ka Sangam, jahan har kona kahani sunata hai.</p>
+            <a href="#about" class="btn fade-in">Gaon Explore Karein →</a>
+        </div>
+    </section>
+
+    <section id="about" class="fade-in">
+        <h2 class="section-title">🌿 Hamara Gaon: Itihaas aur Sanskruti</h2>
+        <div class="grid-layout">
+            <div class="info-card fade-in">
+                <h3>Vikas ki Gatha</h3>
+                <p>Ramnagar ka itihaas 400 varshon se bhi purana hai. Iski sthapna yahan ke mool-nivasiyon ne ki thi. Gaon ne kai utaar-chadhav dekhe hain, par apni pehchan barkarar rakhi hai. Aaj, yeh aadhunik suvidhaon aur paramparik moolyon ka mishran hai.</p>
+            </div>
+            <div class="info-card fade-in">
+                <h3>Bhaugolik Saundarya</h3>
+                <p>Narmada Nadi ke pavitra tat par sthit, Ramnagar charon dishaon se ghane jangalon aur upjau khetaron se ghira hai. Yahan ka mausam saalon bhar suhavana rehta hai, aur prakritik saundarya man moh leta hai.</p>
+            </div>
+            <div class="info-card fade-in">
+                <h3>Paramparik Utsav</h3>
+                <p>Holi, Diwali, Gangaur, aur Krishna Janmashtami yahan ke pramukh tyohar hain. Gaonwale ekjut hokar in utsavon ko bade ullas se manate hain. Lok-nritya aur paramparik bhojan in tyoharon ki jaan hain.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="institutions" class="fade-in">
+        <h2 class="section-title">🏫 Shiksha, Swasthya aur Shasan</h2>
+        <div class="grid-layout">
+            <div class="info-card fade-in">
+                <h3>Gramin Shiksha Kendra</h3>
+                <p>Hamare gaon mein ek suvyavasthit Primary aur Middle School hai, jismein 300 se adhik vidyarthi shiksha grahan karte hain. Yahan computer lab aur library ki suvidha bhi uplabdh hai, jo bhavishya ke nirmataon ko taiyar kar rahi hai.</p>
+            </div>
+            <div class="info-card fade-in">
+                <h3>Adarsh Panchayat Bhawan</h3>
+                <p>Naya nirmit Panchayat Bhawan gaon ke prashasan ka kendra hai. Yahan par regular Gram Sabha aayojit hoti hai, jismein gaon ke vikas aur samasyaon par charcha ki jaati hai. Yeh sthan gaon ki ekta aur pragati ka prateek hai.</p>
+            </div>
+            <div class="info-card fade-in">
+                <h3>Prathmik Swasthya Kendra</h3>
+                <p>Gaon mein ek Prathmik Swasthya Kendra (Dispensary) hai jahan ek anubhavi doctor aur nurse niyamit roop se uparsthit rehte hain. Yahin par chote-mote rogon ka ilaj aur vaccination camps lagaye jaate hain.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="fade-in">
+        <h2 class="section-title">📸 Tasveeron Mein Hamara Gaon</h2>
+        <div class="gallery-grid fade-in">
+            <div class="gallery-item"><img src="photo_1.jpg" alt="Gaon ka Mandir"><div class="gallery-overlay"><p>Prachin Shiv Mandir</p></div></div>
+            <div class="gallery-item"><img src="photo_2.jpg" alt="School ki Building"><div class="gallery-overlay"><p>Gramin Prathmik Pathshala</p></div></div>
+            <div class="gallery-item"><img src="photo_3.jpg" alt="Khet Khaliyan"><div class="gallery-overlay"><p>Hari-bhari Fasalein</p></div></div>
+            <div class="gallery-item"><img src="photo_4.jpg" alt="Panchayat Bhawan"><div class="gallery-overlay"><p>Naya Panchayat Kendra</p></div></div>
+            <div class="gallery-item"><img src="photo_5.jpg" alt="Nadi ka Kinara"><div class="gallery-overlay"><p>Narmada Tat ka Drishya</p></div></div>
+            <div class="gallery-item"><img src="photo_6.jpg" alt="Gramin Jeevan"><div class="gallery-overlay"><p>Gramin Jeevan ka Ek Pal</p></div></div>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <h2 class="section-title">✉️ Sampark Karein aur Suajhav Dein</h2>
+        <p class="contact-form-description" style="color: var(--gray-text); text-align: center; margin-bottom: 20px;">
+            Hamare gaon ke vikas mein yogdan dene ya kisi bhi jaankari ke liye, kripya neeche diye gaye form ka upyog karein. Aapke suajhav aur prashn hamare liye mahatvapurna hain.
+        </p>
+        
+        <form action="https://formspree.io/f/f_xxxxxxxx" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Aapka Poora Naam" required>
+            <input type="email" name="email" placeholder="Aapka Email Address" required>
+            <textarea name="message" placeholder="Aapka Sandesh ya Suajhav yahan likhein..." rows="6" required></textarea>
+            <button type="submit" class="btn">Sandesh Bhejein</button> 
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Ramnagar Gaon. Sabhi Adhikar Surakshit. Developed with ❤️ by Ankit Kag.</p>
+    </footer>
+<script src="code.js"></script>
+</body>
+</html>
